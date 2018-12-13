@@ -9,7 +9,7 @@ class TopTen extends Component {
 
   componentDidMount() {
     axios
-      .get(`http://localhost:8080/getTopTen`, { croosdomain: true })
+      .get(`http://localhost:8080/getTopTen`)
       .then(res => {
         if (res) {
           this.setState({ queries: res.data });
@@ -21,7 +21,7 @@ class TopTen extends Component {
   getQueries = (isOpen, e) => {
     if (isOpen) {
       axios
-        .get(`http://localhost:8080/getTopTen`, { croosdomain: true })
+        .get(`http://localhost:8080/getTopTen`)
         .then(res => {
           if (res) {
             this.setState({ queries: res.data });

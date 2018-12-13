@@ -18,14 +18,7 @@ class Home extends Component {
       const s = this.state.query.replace(" ", "+");
       axios
         .get(
-          `https://itunes.apple.com/search?term=${s}&limit=25&entity=musicTrack`,
-          {
-            croosdomain: true,
-            headers: {
-              "Access-Control-Allow-Origin": "*",
-              "Content-Type": "application/json"
-            }
-          }
+          `https://itunes.apple.com/search?term=${s}&limit=25&entity=musicTrack`
         )
         .then(res => res.data)
         .then(data => {
@@ -51,8 +44,7 @@ class Home extends Component {
       url: "http://localhost:8080/addSearch",
       data: {
         query: this.state.query
-      },
-      croosdomain: true
+      }
     })
       .then(res => {
         console.log(res);
