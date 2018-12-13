@@ -21,7 +21,7 @@ class Home extends Component {
           `https://itunes.apple.com/search?term=${s}&limit=25&entity=musicTrack`,
           {
             croosdomain: true,
-            header: {
+            headers: {
               "Access-Control-Allow-Origin": "*",
               "Content-Type": "application/json"
             }
