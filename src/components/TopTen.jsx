@@ -15,7 +15,7 @@ class TopTen extends Component {
           this.setState({ queries: res.data });
         }
       })
-      .error(error => console.log(`Top ten error: ${error}`));
+      .catch(error => console.log(`Top ten error: ${error}`));
   }
 
   getQueries = (isOpen, e) => {
@@ -27,7 +27,7 @@ class TopTen extends Component {
             this.setState({ queries: res.data });
           }
         })
-        .error(error => console.log(`Top ten error: ${error}`));
+        .catch(error => console.log(`Top ten error: ${error}`));
     }
   };
 

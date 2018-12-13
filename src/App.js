@@ -10,10 +10,7 @@ import { Grid } from "react-bootstrap";
 
 class App extends Component {
   style = {
-    backgroundImage: `url(${Guitars})`,
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center"
+    backgroundImage: `url(${Guitars})`
   };
 
   render() {

@@ -30,7 +30,7 @@ class Home extends Component {
             this.setState({ tracks: tracksArr, query: null });
           }
         })
-        .error(error => console.log(`Searching tracks error: ${error}`));
+        .catch(error => console.log(`Searching tracks error: ${error}`));
     }
   }
 
@@ -49,7 +49,7 @@ class Home extends Component {
       .then(res => {
         console.log(res);
       })
-      .error(error => console.log(`Adding search to db error: ${error}`));
+      .catch(error => console.log(`Adding search to db error: ${error}`));
   };
 
   render() {

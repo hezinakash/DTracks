@@ -36,4 +36,7 @@
   background-position: center;
   min-height: 91.5vh;
   height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }

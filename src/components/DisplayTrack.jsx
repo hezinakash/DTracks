@@ -16,7 +16,7 @@ class DisplayTrack extends Component {
       .then(data => {
         this.setState({ track: data.results[0] });
       })
-      .error(error => console.log(`Track error: ${error}`));
+      .catch(error => console.log(`Track error: ${error}`));
   }
 
   millisToMinutesAndSeconds(millis) {
