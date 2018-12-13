@@ -12,7 +12,11 @@ class DisplayTrack extends Component {
   componentDidMount() {
     axios
       .get(`https://itunes.apple.com/lookup?id=${this.props.match.params.id}`, {
-        croosdomain: true
+        croosdomain: true,
+        header: {
+          "Access-Control-Allow-Origin": "*",
+          "Content-Type": "application/json"
+        }
       })
       .then(res => res.data)
       .then(data => {
