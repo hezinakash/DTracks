@@ -20,8 +20,8 @@ class App extends Component {
           <NavBar />
           <Grid fluid style={this.style}>
             <Switch>
-              <Route exact path="/" component={Home} />
-              <Route path="/:id" component={Play} />
+              <Route exact path="/Tracks" component={Home} />
+              <Route path="/Tracks/:id" component={Play} />
             </Switch>
           </Grid>
         </div>

@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const TrackItem = ({ track }) => {
   return (
-    <Link to={"/" + track.trackId} className="card" id={track.trackId}>
+    <Link to={"/Tracks/" + track.trackId} className="card" id={track.trackId}>
       <img
         className="card-img-top"
         src={trackImg(track)}
