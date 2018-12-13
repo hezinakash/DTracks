@@ -11,7 +11,9 @@ class DisplayTrack extends Component {
 
   componentDidMount() {
     axios
-      .get(`https://itunes.apple.com/lookup?id=${this.props.match.params.id}`)
+      .get(`https://itunes.apple.com/lookup?id=${this.props.match.params.id}`, {
+        croosdomain: true
+      })
       .then(res => res.data)
       .then(data => {
         this.setState({ track: data.results[0] });
