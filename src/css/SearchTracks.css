@@ -1,0 +1,28 @@
+#query {
+  border-radius: 50px;
+  margin-right: 5px;
+}
+
+#searchForm {
+  display: flex;
+  align-items: flex-start;
+}
+
+#searchForm .form-group {
+  width: 100%;
+  margin: 0;
+}
+
+#searchForm .btn {
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  margin-left: -5px;
+  font-size: 1.6rem;
+  color: #000 !important;
+  outline: none !important;
+}
+
+#searchForm .glyphicon {
+  text-shadow: 0 0px 5px #fff;
+}

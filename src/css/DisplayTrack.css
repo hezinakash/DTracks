@@ -1,0 +1,97 @@
+.track-wrapper {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+.track {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(128, 122, 122, 0.9);
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.track .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.track .img-wrapper img {
+  width: 100%;
+}
+
+.track .content .top {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.track .top .partA {
+  margin-bottom: 20px;
+}
+
+.track .content .bottom {
+  width: 100%;
+}
+
+.track-info {
+  text-align: left;
+  margin-top: 5%;
+}
+
+.track-info > div {
+  display: flex;
+}
+
+.track-info label {
+  font-size: 1.1rem;
+  margin: 0 2px;
+}
+
+.player-wrapper {
+  position: relative;
+  display: flex;
+  width: 100%;
+}
+
+.player-wrapper > div {
+  width: 100% !important;
+  height: auto !important;
+}
+
+.player-wrapper audio {
+  height: 8rem !important;
+}
+
+.react-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .track .content .top {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .track .partA {
+    margin-bottom: 0;
+  }
+
+  .track-info {
+    margin-top: 0;
+  }
+
+  .track-info label {
+    font-size: 1.3rem;
+  }
+}

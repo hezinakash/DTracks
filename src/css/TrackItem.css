@@ -1,0 +1,40 @@
+.card {
+  padding: 10px;
+  margin-bottom: 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card img {
+  width: 65%;
+  margin: auto;
+}
+
+.card > .card-body {
+  padding: 10px;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.card .card-text {
+  color: white;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.card:hover .card-text {
+  animation: move 8s linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes move {
+  0% {
+    margin-left: 100%;
+  }
+
+  100% {
+    margin-left: -250%;
+  }
+}

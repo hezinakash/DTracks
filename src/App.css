@@ -30,3 +30,10 @@
     transform: rotate(360deg);
   }
 }
+
+.App > .container-fluid {
+  background-size: cover;
+  background-position: center;
+  min-height: 91.5vh;
+  height: auto;
+}
