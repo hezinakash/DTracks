@@ -41,7 +41,7 @@ const getTen = searches => {
 const update = (search, cb) => {
   search.count++;
   search.save().then(() => {
-    return cb(!newSearch.isNew);
+    return cb(!search.isNew);
   });
 };
 

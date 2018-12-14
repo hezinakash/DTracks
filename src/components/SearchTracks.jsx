@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { FormGroup, FormControl, Button, Glyphicon } from "react-bootstrap";
-import { Col } from "react-bootstrap";
 import "../css/SearchTracks.css";
 
 class SearchTracks extends Component {
@@ -40,24 +39,22 @@ class SearchTracks extends Component {
   };
   render() {
     return (
-      <Col xs={8}>
-        <form onSubmit={this.handleSubmit} id="searchForm">
-          <FormGroup
-            controlId="query"
-            validationState={this.getValidationState()}
-          >
-            <FormControl
-              type="text"
-              placeholder="Search..."
-              onChange={this.handleChange}
-              inputRef={ref => (this.input = ref)}
-            />
-          </FormGroup>
-          <Button type="submit">
-            <Glyphicon glyph="search" />
-          </Button>
-        </form>
-      </Col>
+      <form onSubmit={this.handleSubmit} id="searchForm">
+        <FormGroup
+          controlId="query"
+          validationState={this.getValidationState()}
+        >
+          <FormControl
+            type="text"
+            placeholder="Search..."
+            onChange={this.handleChange}
+            inputRef={ref => (this.input = ref)}
+          />
+        </FormGroup>
+        <Button type="submit">
+          <Glyphicon glyph="search" />
+        </Button>
+      </form>
     );
   }
 }

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import TracksList from "./TracksList";
 import axios from "axios";
 import SearchTracks from "./SearchTracks";
-import { Grid, Row } from "react-bootstrap";
+import { Grid, Row, Col } from "react-bootstrap";
 import "../css/Home.css";
 import TopTen from "./TopTen";
 
@@ -56,12 +56,15 @@ class Home extends Component {
     return (
       <Grid id="home">
         <Row>
-          <div className="searchPanels">
+          <Col xs={12} md={10}>
             <SearchTracks search={this.updateQuery} />
+          </Col>
+          <Col xs={12} md={2}>
             <TopTen select={this.updateQuery} />
-          </div>
-
-          <TracksList tracks={this.state.tracks} />
+          </Col>
+          <Col xs={12}>
+            <TracksList tracks={this.state.tracks} />
+          </Col>
         </Row>
       </Grid>
     );

@@ -1,58 +1,25 @@
-.track-wrapper {
-  height: 100%;
+.track-wrapper > .row {
   display: flex;
   justify-content: center;
-  align-items: center;
-  padding-bottom: 20px;
-  padding-top: 20px;
 }
 
 .track {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   background: rgba(128, 122, 122, 0.9);
   border-radius: 8px;
-  padding: 20px;
+  padding: 2.5em;
 }
 
-.track .content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-}
-
-.track .img-wrapper img {
-  width: 100%;
-}
-
-.track .content .top {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-
-.track .top .partA {
-  margin-bottom: 20px;
-}
-
-.track .content .bottom {
+.track img {
   width: 100%;
 }
 
 .track-info {
   text-align: left;
-  margin-top: 5%;
+  padding-top: 2rem;
 }
 
-.track-info > div {
-  display: flex;
-}
-
-.track-info label {
-  font-size: 1.1rem;
+.track label {
+  font-size: 1.5rem;
   margin: 0 2px;
 }
 
@@ -75,23 +42,4 @@
   position: absolute;
   top: 0;
   left: 0;
-}
-
-@media screen and (min-width: 768px) {
-  .track .content .top {
-    flex-direction: row;
-    align-items: center;
-  }
-
-  .track .partA {
-    margin-bottom: 0;
-  }
-
-  .track-info {
-    margin-top: 0;
-  }
-
-  .track-info label {
-    font-size: 1.3rem;
-  }
 }

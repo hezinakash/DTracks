@@ -1,33 +1,3 @@
-#home {
-  padding-top: 20px;
-  height: 100%;
-}
-
-#home .row {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100%;
-}
-
-#home .searchPanels {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
 #home .btn-toolbar {
-  margin-top: 10px;
-}
-
-@media (min-width: 768px) {
-  #home .searchPanels {
-    flex-direction: row;
-  }
-
-  #home .btn-toolbar {
-    margin-top: 0;
-  }
+  margin: auto;
 }

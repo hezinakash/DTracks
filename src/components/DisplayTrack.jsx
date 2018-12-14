@@ -2,11 +2,12 @@ import React, { Component } from "react";
 import ReactPlayer from "react-player";
 import axios from "axios";
 import "../css/DisplayTrack.css";
-import { Col } from "react-bootstrap";
+import { Grid, Row, Col, Image } from "react-bootstrap";
 
 class DisplayTrack extends Component {
   state = {
-    track: null
+    track: null,
+    hasError: false
   };
 
   componentDidMount() {
@@ -14,9 +15,12 @@ class DisplayTrack extends Component {
       .get(`https://itunes.apple.com/lookup?id=${this.props.match.params.id}`)
       .then(res => res.data)
       .then(data => {
-        this.setState({ track: data.results[0] });
+        this.setState({ track: data.results[0], hasError: false });
       })
-      .catch(error => console.log(`Track error: ${error}`));
+      .catch(error => {
+        this.setState({ hasError: true });
+        console.log(`Track error: ${error}`);
+      });
   }
 
   millisToMinutesAndSeconds(millis) {
@@ -28,14 +32,12 @@ class DisplayTrack extends Component {
   bulidItem = track => {
     return (
       <React.Fragment>
-        <div className="top">
-          <Col xs={12} sm={4} lg={3} className="partA">
-            <div className="img-wrapper">
-              <img src={track.artworkUrl100} alt={track.trackName} />
-            </div>
+        <Row>
+          <Col xs={12} md={4}>
+            <Image src={track.artworkUrl60} responsive />;
           </Col>
-          <Col xs={12} sm={8} lg={9} className="partB">
-            <div className="track-info">
+          <Col xs={12} md={8}>
+            <Row className="track-info">
               <Col xs={12} sm={6}>
                 <label>Artist: </label>
                 <label>{track.artistName}</label>
@@ -58,31 +60,35 @@ class DisplayTrack extends Component {
                   {this.millisToMinutesAndSeconds(track.trackTimeMillis)}
                 </label>
               </Col>
-            </div>
+            </Row>
           </Col>
-        </div>
-        <div className="bottom">
+        </Row>
+        <Row>
           <div className="player-wrapper">
             <ReactPlayer url={track.previewUrl} playing controls volume={0.5} />
           </div>
-        </div>
+        </Row>
       </React.Fragment>
     );
   };
 
   render() {
-    const { track } = this.state;
+    const { track, hasError } = this.state;
     const trackItem = track ? (
       this.bulidItem(track)
-    ) : (
+    ) : hasError ? (
       <h1>Track was not found</h1>
+    ) : (
+      <h1>Loading...</h1>
     );
     return (
-      <Col xs={12} lg={8} className="track-wrapper">
-        <div className="track">
-          <div className="content">{trackItem}</div>
-        </div>
-      </Col>
+      <Grid className="track-wrapper">
+        <Row>
+          <Col xs={10} md={8} className="track">
+            {trackItem}
+          </Col>
+        </Row>
+      </Grid>
     );
   }
 }

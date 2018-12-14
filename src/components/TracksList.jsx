@@ -1,6 +1,6 @@
 import React from "react";
 import TrackItem from "./TrackItem";
-import { Col } from "react-bootstrap";
+import { Grid, Row, Col } from "react-bootstrap";
 import "../css/TracksList.css";
 
 const TracksList = props => {
@@ -17,9 +17,13 @@ const TracksList = props => {
   );
 
   return (
-    <Col xs={8} lg={12} className="tracks">
-      {items}
-    </Col>
+    <Grid fluid>
+      <Row>
+        <Col xs={12} className="tracks">
+          <Row>{items}</Row>
+        </Col>
+      </Row>
+    </Grid>
   );
 };
 
