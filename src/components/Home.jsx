@@ -59,7 +59,7 @@ class Home extends Component {
           <Col xs={12} md={10}>
             <SearchTracks search={this.updateQuery} />
           </Col>
-          <Col xs={12} md={2}>
+          <Col xs={12} md={2} className="topTen-wrapper">
             <TopTen select={this.updateQuery} />
           </Col>
           <Col xs={12}>

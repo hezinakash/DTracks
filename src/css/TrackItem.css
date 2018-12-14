@@ -21,12 +21,7 @@
 .card .card-text {
   color: white;
   white-space: nowrap;
-  overflow: hidden;
-}
-
-.card:hover .card-text {
-  animation: move 8s linear;
-  animation-iteration-count: infinite;
+  overflow: auto;
 }
 
 @keyframes move {
@@ -36,5 +31,16 @@
 
   100% {
     margin-left: -250%;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .card .card-text {
+    overflow: hidden;
+  }
+
+  .card:hover .card-text {
+    animation: move 8s linear;
+    animation-iteration-count: infinite;
   }
 }
