@@ -33,9 +33,9 @@ const getQueries = searches => {
 const getTen = searches => {
   return searches
     .sort((a, b) => {
-      return a.count >= b.count ? a : b;
+      return a.count - b.count;
     })
-    .splice(0, 9);
+    .slice(0, 10);
 };
 
 const update = (search, cb) => {
