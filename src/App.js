@@ -18,8 +18,8 @@ class App extends Component {
         <div className="App" style={this.style}>
           <NavBar />
           <Switch>
-            <Route exact path="/" component={Home} />
-            <Route path="/:id" component={Play} />
+            <Route exact path="/DTracks" component={Home} />
+            <Route path="/DTracks/:id" component={Play} />
           </Switch>
         </div>
       </BrowserRouter>
