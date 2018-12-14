@@ -1,7 +1,7 @@
 {
   "name": "itunes",
   "version": "0.1.0",
-  "homepage": "http://hezinakash.github.io/Tracks/",
+  "homepage": "http://hezinakash.github.io/DTracks/",
   "private": true,
   "dependencies": {
     "@babel/polyfill": "^7.0.0",
