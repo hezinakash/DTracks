@@ -38,7 +38,7 @@
   height: 100%;
 }
 
-@media screen and (max-width: 991px) {
+@media screen and (orientation: landscape) and (max-width: 991px) {
   .App {
     height: auto;
     padding-bottom: 2rem;
