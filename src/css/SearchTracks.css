@@ -4,7 +4,11 @@
 }
 
 #searchForm {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
   align-items: flex-start;
 }
 
@@ -16,6 +20,7 @@
 #searchForm .btn {
   background: none !important;
   border: none !important;
+  -webkit-box-shadow: none !important;
   box-shadow: none !important;
   margin-left: -5px;
   font-size: 1.6rem;
