@@ -1,15 +1,15 @@
 {
-  "main.css": "/DTracks/static/css/main.e1b6eec0.chunk.css",
-  "main.js": "/DTracks/static/js/main.3ffee715.chunk.js",
-  "main.js.map": "/DTracks/static/js/main.3ffee715.chunk.js.map",
-  "static/js/1.072eefe3.chunk.js": "/DTracks/static/js/1.072eefe3.chunk.js",
-  "static/js/1.072eefe3.chunk.js.map": "/DTracks/static/js/1.072eefe3.chunk.js.map",
+  "main.css": "/DTracks/static/css/main.87fa6fd2.chunk.css",
+  "main.js": "/DTracks/static/js/main.dd0e4af7.chunk.js",
+  "main.js.map": "/DTracks/static/js/main.dd0e4af7.chunk.js.map",
+  "static/js/1.0b60b990.chunk.js": "/DTracks/static/js/1.0b60b990.chunk.js",
+  "static/js/1.0b60b990.chunk.js.map": "/DTracks/static/js/1.0b60b990.chunk.js.map",
   "runtime~main.js": "/DTracks/static/js/runtime~main.f71ffceb.js",
   "runtime~main.js.map": "/DTracks/static/js/runtime~main.f71ffceb.js.map",
-  "static/css/main.e1b6eec0.chunk.css.map": "/DTracks/static/css/main.e1b6eec0.chunk.css.map",
+  "static/css/main.87fa6fd2.chunk.css.map": "/DTracks/static/css/main.87fa6fd2.chunk.css.map",
   "static/media/Apple Music.png": "/DTracks/static/media/Apple Music.bf745694.png",
   "static/media/guitars.jpg": "/DTracks/static/media/guitars.c38e43b7.jpg",
   "index.html": "/DTracks/index.html",
-  "precache-manifest.c4ae2ea1d8edbe5cbd1ba6d6b06a9bcd.js": "/DTracks/precache-manifest.c4ae2ea1d8edbe5cbd1ba6d6b06a9bcd.js",
+  "precache-manifest.8ba390bbeae91f7d24f3d9d0b4319ff1.js": "/DTracks/precache-manifest.8ba390bbeae91f7d24f3d9d0b4319ff1.js",
   "service-worker.js": "/DTracks/service-worker.js"
 }
