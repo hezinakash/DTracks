@@ -1,59 +1,35 @@
 const Serach = require("../models/search");
 
 const getTopTen = cb => {
-  Serach.find({}, (err, data) => {
-    if (data && data.length <= 10) {
-      return cb(getQueries(data));
-    } else if (data && data.length > 10) {
-      searches = getTen(data);
-      return cb(getQueries(searches));
-    } else {
-      return cb(null);
-    }
-  });
+  Serach.find({})
+    .sort({ count: -1 })
+    .limit(25)
+    .select("-_id  query")
+    .exec((err, data) => {
+      if (err) {
+        console.log(`Top 10 error: ${err}`);
+        return cb(null);
+      } else {
+        return cb(data.map(item => item.query));
+      }
+    });
 };
 
 const add = (query, cb) => {
   const lowerCaseQuery = query.toLowerCase();
-  Serach.findOne({ query: lowerCaseQuery }, (err, res) => {
-    if (res) {
-      update(res, cb);
-    } else {
-      create(lowerCaseQuery, cb);
+  Serach.findOneAndUpdate(
+    { query: lowerCaseQuery },
+    { $inc: { count: 1 } },
+    { upsert: true },
+    (err, res) => {
+      if (err) {
+        console.log(`Add or update error: ${err}`);
+        return cb(false);
+      } else {
+        return cb(true);
+      }
     }
-  });
-};
-
-const getQueries = searches => {
-  return searches.map(search => {
-    return search.query;
-  });
-};
-
-const getTen = searches => {
-  return searches
-    .sort((a, b) => {
-      return a.count - b.count;
-    })
-    .slice(0, 10);
-};
-
-const update = (search, cb) => {
-  search.count++;
-  search.save().then(() => {
-    return cb(!search.isNew);
-  });
-};
-
-const create = query => {
-  const newSearch = new Serach({
-    query: query,
-    count: 1
-  });
-
-  newSearch.save().then(() => {
-    return cb(!newSearch.isNew);
-  });
+  );
 };
 
 module.exports.getTopTen = getTopTen;
