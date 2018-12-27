@@ -5,11 +5,12 @@ import SearchTracks from "./SearchTracks";
 import { Grid, Row, Col } from "react-bootstrap";
 import "../css/Home.css";
 import TopTen from "./TopTen";
+import { connect } from "react-redux";
+import { updateTracks } from "../actions/tracksActions";
 
 class Home extends Component {
   state = {
-    query: null,
-    tracks: null
+    query: null
   };
 
   componentDidUpdate() {
@@ -22,13 +23,8 @@ class Home extends Component {
         )
         .then(res => res.data)
         .then(data => {
-          if (data && data.resultCount > 0) {
-            let tracksArr = [];
-            data.results.forEach(track => {
-              tracksArr.push(track);
-            });
-            this.setState({ tracks: tracksArr, query: null });
-          }
+          this.setState({ query: null });
+          this.props.updateTracks(data.results);
         })
         .catch(error => console.log(`Searching tracks error: ${error}`));
     }
@@ -53,6 +49,7 @@ class Home extends Component {
   };
 
   render() {
+    const { tracks } = this.props;
     return (
       <Grid id="home">
         <Row>
@@ -63,7 +60,7 @@ class Home extends Component {
             <TopTen select={this.updateQuery} />
           </Col>
           <Col xs={12}>
-            <TracksList tracks={this.state.tracks} />
+            <TracksList tracks={tracks} />
           </Col>
         </Row>
       </Grid>
@@ -71,4 +68,21 @@ class Home extends Component {
   }
 }
 
-export default Home;
+const mapStateToProps = state => {
+  return {
+    tracks: state.tracks
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    updateTracks: tracks => {
+      dispatch(updateTracks(tracks));
+    }
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Home);

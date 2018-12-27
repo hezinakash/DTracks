@@ -7,7 +7,7 @@ const TracksList = props => {
   const items = props.tracks ? (
     props.tracks.map(item => {
       return (
-        <Col xs={12} lg={2} key={item.trackId}>
+        <Col xs={12} sm={6} md={4} lg={2} key={item.trackId}>
           <TrackItem track={item} />
         </Col>
       );

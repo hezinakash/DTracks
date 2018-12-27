@@ -1,28 +1,10 @@
 import React, { Component } from "react";
 import ReactPlayer from "react-player";
-import axios from "axios";
 import "../css/DisplayTrack.css";
 import { Grid, Row, Col, Image } from "react-bootstrap";
+import { connect } from "react-redux";
 
 class DisplayTrack extends Component {
-  state = {
-    track: null,
-    hasError: false
-  };
-
-  componentDidMount() {
-    axios
-      .get(`https://itunes.apple.com/lookup?id=${this.props.match.params.id}`)
-      .then(res => res.data)
-      .then(data => {
-        this.setState({ track: data.results[0], hasError: false });
-      })
-      .catch(error => {
-        this.setState({ hasError: true });
-        console.log(`Track error: ${error}`);
-      });
-  }
-
   millisToMinutesAndSeconds(millis) {
     var minutes = Math.floor(millis / 60000);
     var seconds = ((millis % 60000) / 1000).toFixed(0);
@@ -73,13 +55,11 @@ class DisplayTrack extends Component {
   };
 
   render() {
-    const { track, hasError } = this.state;
+    const { track } = this.props;
     const trackItem = track ? (
       this.bulidItem(track)
-    ) : hasError ? (
-      <h1>Track was not found</h1>
     ) : (
-      <h1>Loading...</h1>
+      <h1>Track was not found</h1>
     );
     return (
       <Grid className="track-wrapper">
@@ -93,4 +73,11 @@ class DisplayTrack extends Component {
   }
 }
 
-export default DisplayTrack;
+const mapStateToProps = (state, ownProps) => {
+  const id = ownProps.match.params.id;
+  return {
+    track: state.tracks.find(track => track.trackId.toString() === id)
+  };
+};
+
+export default connect(mapStateToProps)(DisplayTrack);

@@ -9,6 +9,10 @@
   margin: auto;
 }
 
+#home .tracks {
+  max-height: 75vh;
+}
+
 @media screen and (min-width: 992px) {
   #home .topTen-wrapper {
     padding-top: 0;
